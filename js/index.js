@@ -37,9 +37,68 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
+
+let aTags = document.querySelectorAll("nav a");
+aTags.forEach((aTag, i) => {
+  aTag.innerHTML = siteContent.nav[`nav-item-${i + 1}`];
+  aTag.style.color = "green";
+})
+
+let appendChild = document.createElement("a");
+appendChild.innerHTML = "Email";
+appendChild.style.color = "green";
+appendChild.style.margin = "20px";
+aTags[5].appendChild(appendChild);
+
+let prependChild = document.createElement("a");
+prependChild.innerHTML = "New";
+prependChild.style.color = "green";
+prependChild.style.margin = "20px";
+aTags[0].prepend(prependChild);
+
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
-const yolo = document.get
+let ctaTextContent = document.getElementsByClassName("cta-text")[0];
+ctaTextContent.getElementsByTagName("h1")[0].innerHTML = siteContent["cta"]["h1"];
+ctaTextContent.getElementsByTagName("button")[0].innerHTML = siteContent["cta"]["button"];
+
+let ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+
+let topTextContentH4 = document.querySelectorAll('.top-content .text-content h4');
+topTextContentH4[0].innerHTML = siteContent["main-content"]["features-h4"];
+topTextContentH4[1].innerHTML = siteContent["main-content"]["about-h4"];
+
+let topTextContentP = document.querySelectorAll('.top-content .text-content p');
+topTextContentP[0].innerHTML = siteContent["main-content"]["features-content"];
+topTextContentP[1].innerHTML = siteContent["main-content"]["about-content"];
+
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+let bottomTextContentH4 = document.querySelectorAll('.bottom-content .text-content h4');
+bottomTextContentH4[0].innerHTML = siteContent["main-content"]["services-h4"];
+bottomTextContentH4[1].innerHTML = siteContent["main-content"]["product-h4"];
+bottomTextContentH4[2].innerHTML = siteContent["main-content"]["vision-h4"];
+
+let bottomTextContentP = document.querySelectorAll('.bottom-content .text-content p');
+bottomTextContentP[0].innerHTML = siteContent["main-content"]["services-content"];
+bottomTextContentP[1].innerHTML = siteContent["main-content"]["product-content"];
+bottomTextContentP[2].innerHTML = siteContent["main-content"]["vision-content"];
+
+
+let contactH4 = document.querySelectorAll('.contact h4');
+contactH4[0].innerHTML = siteContent["contact"]["contact-h4"];
+
+let contactP = document.querySelectorAll('.contact p');
+contactP[0].innerHTML = siteContent.contact.address;
+contactP[1].innerHTML = siteContent.contact.phone;
+contactP[2].innerHTML = siteContent.contact.email;
+
+
+let copyright = document.getElementsByTagName("footer");
+copyright[0].innerHTML = siteContent.footer.copyright;
+
